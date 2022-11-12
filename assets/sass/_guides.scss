@@ -1,0 +1,28 @@
+.guides {
+  text-align: center;
+  .image {
+    img {
+      width: 300px;
+      max-width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+  .text {
+    background-color: #735384;
+    padding: 10px;
+    color: #fff;
+    border-radius: 15px;
+    font-size: 22px;
+    width: 75%;
+    margin: 20px auto;
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+  .videos {
+    iframe {
+      margin: 10px 0;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.comments .comment .description::after {
+  right: 0px;
+  border-color: transparent transparent transparent #fff;
+  transform: translate(100%, -50%);
+}
+
+.salon-details .content .work-time .head:after {
+  right: 0;
+}
+.responsive-table table ul {
+  left: 25px;
+  right: auto;
+}
+nav .alerts ul,
+nav .alerts ul::after {
+  left: 0;
+  right: auto;
+}
+aside .count {
+  left: 10px;
+  right: auto;
+}
+.salon-details .image {
+  direction: ltr;
+}

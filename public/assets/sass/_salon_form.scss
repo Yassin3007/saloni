@@ -1,0 +1,75 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.salon-form {
+  width: 80%;
+  margin: auto;
+  @media (max-width: 991px) {
+    width: 100%;
+  }
+  > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  label {
+    background-color: #735384;
+    padding: 10px;
+    width: 200px;
+    height: fit-content;
+    border-radius: 5px;
+    color: #fff;
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+  input,
+  textarea,
+  select {
+    flex: 1;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    padding: 7px;
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+  .drop-zone {
+    flex: 1;
+    min-height: 200px;
+    height: auto;
+    position: relative;
+    input[type="file"] {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      cursor: pointer;
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: #fff;
+        inset: 0;
+        z-index: 1;
+      }
+    }
+    .images {
+      position: absolute;
+      inset: 0;
+      overflow: auto;
+      z-index: 1;
+      border-radius: 5px;
+      padding: 7px;
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        padding: 2px;
+      }
+    }
+  }
+}

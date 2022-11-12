@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "Hacen Tunisia", "Courier New", Courier, monospace;
+  src: url("../fonts/Hacen Tunisia.ttf");
+}
+body {
+  font-family: "Hacen Tunisia";
+  &.arabic {
+    direction: rtl;
+  }
+}
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+h1,
+h2,
+h3 {
+  font-weight: normal;
+}
+select {
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+textarea {
+  height: 200px;
+}

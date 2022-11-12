@@ -1,0 +1,76 @@
+@use "./variables" as *;
+
+.setting {
+  .personal-image {
+    width: fit-content;
+    margin: 30px auto;
+    position: relative;
+
+    form {
+      width: fit-content;
+      margin: auto;
+      input {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: #fff;
+        border-radius: 50%;
+        bottom: 44px;
+        right: 0px;
+        &::after {
+          content: "+";
+          position: absolute;
+          inset: 0;
+          background: #00f;
+          color: #fff;
+          font-size: 25px;
+          font-weight: bold;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  // h3 {
+  //   padding: 10px 20px;
+  //   font-weight: bold;
+  //   font-size: 20px;
+  //   background-color: #f3f3f3;
+  //   width: fit-content;
+  //   border-bottom: 3px solid #2196f3;
+  // }
+  .global-form {
+    display: block;
+    // background-color: #fdfdfd;
+    border-bottom: 3px solid #8a363a;
+    // border-radius: 0;
+  }
+  .dowload,
+  .upload {
+    display: flex;
+    align-items: center;
+    margin: 20px auto;
+    width: fit-content;
+    .btn {
+      background-color: #2196f3;
+      color: #fff;
+      border-radius: 20px;
+    }
+    svg {
+      font-size: 20px;
+      margin-inline-start: 10px;
+    }
+  }
+  .dowload {
+    svg {
+      color: #080;
+    }
+  }
+  .upload {
+    svg {
+      color: #8a363a;
+    }
+  }
+}

@@ -1,0 +1,124 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+nav {
+  padding: 20px 0;
+  background-color: $dark-color;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  .container {
+    @include centering();
+    @media (max-width: 767px) {
+      flex-direction: column;
+      gap: 10px;
+    }
+    &.dashboard {
+      flex-direction: row;
+    }
+  }
+  .logo img {
+    width: 150px;
+  }
+  .log-out {
+    cursor: pointer;
+    font-size: 20px;
+    margin-inline-end: 10px;
+    transition: 0.5s;
+    span {
+      margin-inline-end: 5px;
+    }
+    &:hover {
+      color: $yellow-color;
+    }
+  }
+  .alerts {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    svg {
+      font-size: 20px;
+    }
+    ul {
+      position: absolute;
+      top: calc(100% + 20px);
+      flex-direction: column;
+      gap: 5px;
+      background-color: #eee;
+      padding: 10px 5px;
+      color: #000;
+      right: 0;
+      align-items: flex-start;
+      display: none;
+      &::after {
+        content: "";
+        position: absolute;
+        border: 15px solid;
+        border-color: transparent transparent #eee transparent;
+        top: 0;
+        right: 0;
+        transform: translateY(-100%);
+      }
+      li {
+        width: 300px;
+        padding: 10px;
+        transition: 0.5s;
+        border-radius: 5px;
+        &:hover {
+          background-color: $dark_color;
+          color: #fff;
+          padding-inline-start: 20px;
+        }
+      }
+    }
+    &:hover {
+      color: $yellow-color;
+      ul {
+        display: block;
+      }
+    }
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    @media (max-width: 767px) {
+      gap: 1rem;
+    }
+    li {
+      position: relative;
+      cursor: pointer;
+      > * {
+        font-size: 1rem;
+      }
+      select {
+        background-color: transparent;
+      }
+      .drop-down {
+        position: absolute;
+        background-color: $dark-color;
+        border-radius: 5px;
+        display: none;
+        a {
+          display: block;
+          padding: 10px 12px;
+          width: 150px;
+          border-bottom: 1px solid #ccc;
+          color: #fff;
+          transition: 0.3s;
+          &:hover {
+            padding-inline-start: 22px;
+          }
+        }
+      }
+      &:hover .drop-down {
+        display: block;
+        animation: go-up 0.5s;
+      }
+    }
+  }
+}

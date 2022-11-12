@@ -1,0 +1,91 @@
+@use "./variables" as *;
+
+aside {
+  background-color: #735384;
+  min-height: calc(100vh - 75px);
+  height: auto;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+
+  img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 30px auto;
+    &.level_1,
+    &.level_2,
+    &.level_3,
+    &.level_4 {
+      border: 10px solid;
+      border-image-width: 20px !important;
+    }
+    &.level_1 {
+      border-image: url("../images/level\ 1.png") 22% round;
+    }
+    &.level_2 {
+      border-image: url("../images/level\ 2.png") 22% round;
+    }
+    &.level_3 {
+      border-image: url("../images/level\ 3.png") 22% round;
+    }
+    &.level_4 {
+      border-image: url("../images/level\ 4.png") 22% round;
+    }
+    @media (max-width: 767px) {
+      width: 70px;
+      height: 70px;
+      border-image-slice: 30% !important;
+    }
+  }
+  ul {
+    flex: 1;
+    li {
+      transition: 0.3s;
+      &.active,
+      &:hover {
+        background-color: $yellow-color;
+      }
+    }
+  }
+  svg {
+    font-size: 20px;
+    @media (max-width: 767px) {
+      display: block !important;
+      margin: auto;
+    }
+  }
+  span {
+    font-size: 20px;
+    margin-inline-start: 10px;
+    width: 200px;
+    display: inline-block;
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+  a {
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    position: relative;
+  }
+  .count {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #f44336;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

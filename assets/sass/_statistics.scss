@@ -1,0 +1,49 @@
+@use "./mixins" as *;
+
+.statistics {
+  @include grid(270px);
+  margin-bottom: 20px;
+  .item {
+    padding: 10px;
+    border-radius: 15px;
+    &:first-child {
+      background-color: #ffb27a;
+    }
+    &:nth-child(2) {
+      background-color: #fd7c5d;
+    }
+    &:nth-child(3) {
+      background-color: #f6aa9a;
+    }
+    &:last-child {
+      background-color: #735384;
+    }
+    .top {
+      @include centering();
+      .number {
+        font-size: 40px;
+        font-weight: bold;
+      }
+      svg {
+        font-size: 30px;
+        color: #fff;
+      }
+    }
+    .text {
+      margin-top: 15px;
+      color: #fff;
+    }
+  }
+}
+.copons .statistics {
+  @include grid(300px);
+}
+.users .statistics {
+  @include grid(100%);
+  .item {
+    width: 400px;
+    max-width: 100%;
+    margin: auto;
+    background-color: #ffb27a;
+  }
+}

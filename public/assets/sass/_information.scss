@@ -1,0 +1,54 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.salon-information {
+  .descirption {
+    display: flex;
+    align-items: center;
+    div {
+      margin-top: 15px;
+    }
+  }
+  .gallery {
+    .images {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
+      margin-left: 100px;
+      margin-top: 20px;
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .submit-all {
+    margin: 20px auto;
+  }
+  .prices {
+    .price {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+  .reservations {
+    table {
+      .buttons {
+        display: flex;
+        gap: 5px;
+      }
+      a {
+        flex: 1;
+      }
+      .confirm {
+        background-color: $green-color;
+      }
+      .delete {
+        background-color: $red-color;
+      }
+    }
+  }
+}

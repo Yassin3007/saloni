@@ -1,0 +1,24 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.contact-us {
+  padding: $main-padding;
+  background-color: $dark-color;
+  color: #fff;
+  .container {
+    @include grid(300px);
+    align-items: center;
+  }
+  h3 {
+    margin: 0;
+    font-size: 24px;
+  }
+  .logo {
+    display: block;
+    width: 150px;
+  }
+  .social {
+    display: flex;
+    gap: 8px;
+  }
+}

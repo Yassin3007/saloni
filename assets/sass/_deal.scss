@@ -1,0 +1,36 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.deal {
+  text-align: center;
+  padding: $main-padding;
+  .container {
+    @include grid(300px);
+  }
+  .box {
+    .image {
+      height: 100px;
+    }
+    .description {
+      background-color: $dark-color;
+      padding: 12px {
+        top: 22px;
+      }
+      margin-top: 30px;
+      border-radius: 25px;
+      color: #fff;
+      position: relative;
+      &::before {
+        content: attr(custom-data);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $main-color;
+        padding: 7px 0;
+        border-radius: 20px;
+        width: 50%;
+      }
+    }
+  }
+}

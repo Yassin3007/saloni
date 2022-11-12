@@ -1,0 +1,27 @@
+@use "./variables" as *;
+
+h2 {
+  color: $dark-color;
+  font-size: 30px;
+  text-align: center;
+  margin: 0 {
+    bottom: 25px;
+  }
+}
+.information {
+  padding: $main-padding;
+}
+.title {
+  background-color: $dark-color;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px 20px;
+  width: fit-content;
+  border-radius: 5px;
+}
+.sub-title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 20px;
+}

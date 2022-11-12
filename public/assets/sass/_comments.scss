@@ -1,0 +1,47 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.comments {
+  .comment {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #eee;
+    padding: 15px;
+    border-radius: 5px;
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+    .description {
+      background-color: #fff;
+      padding: 10px;
+      flex: 1;
+      border-radius: 5px;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        border: 10px solid transparent;
+        transform: translate(-100%, -50%);
+        border-right-color: #ffff;
+      }
+      .name {
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .rate {
+        margin: 7px 0;
+      }
+      .text {
+        font-size: 17px;
+      }
+    }
+  }
+}

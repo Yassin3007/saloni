@@ -1,0 +1,20 @@
+@use "./variables" as *;
+
+.add-copon {
+  .add-btn {
+    padding: 10px 20px;
+    background-color: $yellow-color;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    border: none;
+    outline: none;
+    width: fit-content;
+    transition: 0.5s;
+    cursor: pointer;
+    &:hover {
+      background-color: #b88b04;
+    }
+  }
+}

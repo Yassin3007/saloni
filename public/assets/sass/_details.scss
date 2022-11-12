@@ -1,0 +1,149 @@
+@use "./variables" as *;
+
+.salon-details {
+  padding: 20px 0;
+  .details {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    @media (max-width: 767px) {
+      flex-direction: column;
+      // > div {
+      //   width: 100%;
+      // }
+    }
+  }
+  .image {
+    position: relative;
+    img {
+      width: 400px;
+      height: 270px;
+      object-fit: cover;
+      border-radius: 5px;
+      display: block;
+      margin: auto;
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+    svg {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 40px;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+      user-select: none;
+      &.fa-chevron-right {
+        right: 10px;
+      }
+      &.fa-chevron-left {
+        left: 10px;
+      }
+      &:hover {
+        color: $main-color;
+      }
+    }
+    .bullets {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      span {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin: 3px;
+        background-color: #eee;
+        border-radius: 50%;
+        border: 1px solid $main-color;
+        cursor: pointer;
+        &:hover,
+        &.active {
+          background-color: $main-color;
+        }
+      }
+    }
+  }
+  .content {
+    flex: 1;
+    .name {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .rate {
+      margin: 15px 0;
+    }
+    .location {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      svg {
+        width: 20px;
+      }
+    }
+    .work-time {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-top: 15px;
+      .head {
+        font-weight: bold;
+        margin-bottom: 5px;
+        padding-inline-start: 20px;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 15px;
+          height: 15px;
+          background-color: $dark-color;
+          border-radius: 50%;
+        }
+      }
+      .time {
+        color: #777;
+      }
+    }
+  }
+  .services {
+    .serve {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 18px;
+      &:not(:first-of-type) {
+        margin-top: 10px;
+      }
+      .name {
+        font-weight: bold;
+      }
+      .price {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+    .send {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      input {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 18px;
+        outline: none;
+        padding: 5px;
+        flex: 1;
+        color: #000;
+      }
+    }
+  }
+}

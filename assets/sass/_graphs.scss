@@ -1,0 +1,17 @@
+.graphs {
+  display: flex;
+  gap: 20px;
+  margin-top: 50px;
+  @media (max-width : 991px) {
+    flex-direction: column;
+  }
+  .item {
+    flex: 1;
+    height: 300px;
+    flex-basis: 300px;
+    padding: 10px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+}

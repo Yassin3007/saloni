@@ -1,0 +1,551 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Hacen Tunisia";
+  src: url("../fonts/Hacen Tunisia.ttf");
+}
+
+body {
+  font-family: "Hacen Tunisia";
+}
+
+body.arabic {
+  direction: rtl;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: normal;
+}
+
+select {
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* start container */
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* end container */
+/* start classes */
+h2 {
+  color: #440e4c;
+  font-size: 30px;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+/* end classes */
+/* start mixins */
+/* end mixins */
+/* start animation */
+@-webkit-keyframes go-up {
+  from {
+    -webkit-transform: translateY(40px);
+    transform: translateY(40px);
+  }
+
+  to {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+
+@keyframes go-up {
+  from {
+    -webkit-transform: translateY(40px);
+    transform: translateY(40px);
+  }
+
+  to {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+
+/* end animation */
+nav {
+  padding: 20px 0;
+  background-color: #440e4c;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+@media (max-width: 767px) {
+  nav .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+nav .logo img {
+  width: 150px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  nav ul {
+    gap: 1rem;
+  }
+}
+
+nav ul li {
+  position: relative;
+  cursor: pointer;
+}
+
+nav ul li>* {
+  font-size: 1rem;
+}
+
+nav ul li select {
+  background-color: transparent;
+}
+
+nav ul li .drop-down {
+  position: absolute;
+  background-color: #440e4c;
+  border-radius: 5px;
+  display: none;
+}
+
+nav ul li .drop-down a {
+  display: block;
+  padding: 10px 12px;
+  width: 150px;
+  border-bottom: 1px solid #ccc;
+  color: #fff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+nav ul li .drop-down a:hover {
+  -webkit-padding-start: 22px;
+  padding-inline-start: 22px;
+}
+
+nav ul li:hover .drop-down {
+  display: block;
+  -webkit-animation: go-up 0.5s;
+  animation: go-up 0.5s;
+}
+
+/* Start Sign In */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.sign-in {
+  background: url(../images/sign-in.jpg) no-repeat center;
+  background-size: cover;
+  position: relative;
+  padding: 70px 0;
+  z-index: 1;
+}
+
+.sign-in input::placeholder {
+  color: #ffffff72 !important;
+}
+
+.sign-in input:focus::placeholder {
+  color: #ffffff00 !important;
+}
+
+.sign-in select {
+  background: none;
+  color: #ffffffd6;
+  width: 50%;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  padding: 10px 0px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.sign-in select option {
+  color: #ffffff;
+  background-color: #a44c8d;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+@media(max-width:560px) {
+  .sign-in select {
+    width: 100%;
+  }
+}
+
+.sign-in .container {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  flex-direction: row-reverse;
+}
+
+@media(max-width:990px) {
+  .sign-in .container {
+    gap: 30px;
+  }
+}
+
+.sign-in::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #dddddd;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 50%;
+  z-index: -1;
+}
+
+.sign-in .sign-in-form {
+  background-color: #440e4c;
+  padding: 20px;
+  border-radius: 40px;
+  width: 35%;
+  color: #ffffff;
+
+}
+
+.sign-in .sign-in-form input[type="text"],
+.sign-in .sign-in-form input[type="password"] {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #eee;
+  color: #fff;
+  padding: 15px 10px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.sign-in input::placeholder {
+  color: white;
+  transition: 0.3s;
+}
+
+.sign-in input:focus {
+  outline: none;
+}
+
+.sign-in input:focus::placeholder {
+  color: transparent;
+}
+
+.sign-in .sign-in-form input[type="submit"] {
+  display: block;
+  border: none;
+  background-color: #a44c8d;
+  width: 70%;
+  margin: 35px auto 0;
+  border-radius: 55px;
+  padding: 7px;
+  color: white;
+  transition: 0.3s;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.sign-in .sign-in-form input[type="submit"]:hover {
+  background-color: #8d4178;
+}
+
+.sign-in .sign-in-form .group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.sign-in span,
+.sign-in input[type="radio"],
+.sign-in input[type="radio"]+label,
+.sign-in input[type="checkbox"],
+.sign-in input[type="checkbox"]+label,
+.sign-in input[type="submit"] {
+  cursor: pointer;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+/* ========== */
+.sign-in .create-account {
+  background-color: #440e4c;
+  padding: 40px 20px;
+  border-radius: 40px;
+  color: #ffffff;
+  width: 65%;
+}
+
+.sign-in .create-account h1 {
+  margin: 0 auto;
+  width: fit-content;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.sign-in .create-account input[type="text"],
+.sign-in .create-account input[type="email"],
+.sign-in .create-account input[type="password"],
+.sign-in .create-account input[type="tel"] {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #eee;
+  padding: 10px 5px;
+  color: #eee;
+}
+
+.sign-in .create-account .part {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 60px;
+  margin-top: 20px;
+}
+
+.sign-in .create-account .part input {
+  width: 50%;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.sign-in .create-account .check {
+  margin: 25px 0 0;
+}
+
+.sign-in .create-account .check .client,
+.sign-in .create-account .check .salon-owner {
+  width: 50%;
+}
+
+.sign-in .create-account .check .client input,
+.sign-in .create-account .check .salon-owner input {
+  width: fit-content;
+  margin-right: 5px;
+}
+
+.sign-in .create-account .radio {
+  margin: 20px 0 0 10px;
+}
+
+.sign-in .create-account input[type="submit"] {
+  display: block;
+  border: none;
+  background-color: #a44c8d;
+  width: 70%;
+  margin: 35px auto 0;
+  border-radius: 55px;
+  padding: 7px;
+  color: white;
+  transition: 0.3s;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.sign-in .create-account input[type="submit"]:hover {
+  background-color: #8d4178;
+}
+
+.sign-in .create-account p {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-align: center;
+  margin: 20px 0 10px;
+}
+
+.sign-in .create-account label,
+.sign-in .create-account span {
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.sign-in .create-account .face-gmail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.sign-in .create-account .box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: #440e4c;
+  cursor: pointer;
+}
+
+.sign-in .create-account .box img {
+  width: 30px;
+}
+
+@media(max-width:560px) {
+  .sign-in .create-account .part {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .sign-in .create-account .part input {
+    width: 100%;
+  }
+
+  .sign-in .create-account .part {
+    align-items: unset;
+    text-align: unset;
+  }
+
+  .sign-in .create-account .face-gmail {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media(max-width:990px) {
+  .sign-in .container {
+    flex-direction: column;
+  }
+
+  .sign-in .sign-in-form {
+    width: 100%;
+  }
+
+  .sign-in .create-account {
+    width: 100%;
+  }
+
+  .sign-in .create-account h1 {
+    text-align: center;
+  }
+}
+
+
+/* End Sign In */
+
+.contact-us {
+  padding: 50px 0;
+  background-color: #440e4c;
+  color: #fff;
+}
+
+.contact-us .container {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.contact-us h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.contact-us .logo {
+  display: block;
+  width: 150px;
+}
+
+.contact-us .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+
+footer {
+  padding: 22px;
+  background-color: #a44c8d;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+}
+
+/*# sourceMappingURL=main.css.map */
